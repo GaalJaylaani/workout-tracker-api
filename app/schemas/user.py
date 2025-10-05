@@ -1,4 +1,8 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, constr
+
+
+
+PasswordStr = constr(min_length=6, max_length=256)
 
 class UserCreate(BaseModel):
     email: EmailStr
